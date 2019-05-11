@@ -44,7 +44,7 @@ public interface Agent
      * Retrieves all intents of this agent.
      * {@link Intent}
      *
-     * @return the list of intents.
+     * @return {@link Collection} of {@link Intent}.
      */
     Collection<? extends Intent> getIntents();
 

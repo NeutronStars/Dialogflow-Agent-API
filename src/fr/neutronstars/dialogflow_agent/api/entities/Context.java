@@ -40,6 +40,12 @@ public interface Context
     Agent getAgent();
 
     /**
+     * Retrieves the instance of {@link Intent} of this context.
+     * @return {@link Intent}
+     */
+    Intent getIntent();
+
+    /**
      * Retrieve the list of intents where this context is.
      * @return {link Collection} of {@link Intent}
      */
@@ -60,4 +66,10 @@ public interface Context
      * @return {@link Optional} of {@link Intent}
      */
     Optional<? extends Intent> getIntentByName(String name);
+
+    /**
+     * Retrieves the lifespan of this context
+     * @return the lifespan
+     */
+    int getLifespan();
 }
