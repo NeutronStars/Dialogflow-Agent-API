@@ -21,19 +21,23 @@ import java.util.Optional;
 
 /**
  * The core of Dialogflow Agent. You can access the agent content from this instance.
+ *
+ * <p>Agents are best described as Natural Language Understanding (NLU) modules.
+ * These modules can be included in your app, website, product, or service and translate text or spoken user requests into actionable data.
+ * This translation occurs when a user's utterance matches an intent within your agent. {@link 'https://dialogflow.com/docs/agents'}</p>
  */
 public interface Agent
 {
 
     /**
-     * Get the name of your agent.
+     * Retrieves the name of this agent.
      *
      * @return agent name.
      */
     String getName();
 
     /**
-     * Get all intents of your agent.
+     * Retrieves all intents of this agent.
      * {@link Intent}
      *
      * @return the list of intents.
@@ -41,8 +45,8 @@ public interface Agent
     Collection<? extends Intent> getIntents();
 
     /**
-     * Get intent with the name.
-     * <br>If the intent <b>does not exist</b> then the optional <b>will be empty</b>.
+     * Retrieves {@link Intent} with the name.
+     * <br>If the {@link Intent} <b>does not exist</b> then the optional <b>will be empty</b>.
      *
      * <h2>Example</h2>
      * <pre><code>
@@ -51,22 +55,22 @@ public interface Agent
      *     });
      * </code></pre>
      *
-     * @param name The name of the intent.
-     * @return optional of the intent.
+     * @param name The name of the {@link Intent}.
+     * @return {@link Optional} of the {@link Intent}.
      */
     Optional<? extends Intent> getIntentByName(String name);
 
     /**
-     * Get all entities of your agent.
+     * Retrieves all entities of this agent.
      * {@link Entity}
      *
-     * @return the list of entities.
+     * @return the {@link Collection} of {@link Entity}.
      */
     Collection<? extends Entity> getEntities();
 
     /**
-     * Get entity with the name.
-     * <br>If the entity <b>does not exist</b> then the optional <b>will be empty</b>.
+     * Retrieves {@link Entity} with the name.
+     * <br>If the {@link Entity} <b>does not exist</b> then the optional <b>will be empty</b>.
      *
      * <h2>Example</h2>
      * <pre><code>
@@ -75,16 +79,15 @@ public interface Agent
      *     });
      * </code></pre>
      *
-     * @param name The name of the entity.
-     * @return optional of the entity.
+     * @param name The name of the {@link Entity}.
+     * @return {@link Optional} of the {@link Entity}.
      */
     Optional<? extends Entity> getEntityByName(String name);
 
     /**
-     * Get settings of your agent.
-     * {@link Settings}
+     * Retrieves {@link Settings} of this agent.
      *
-     * @return settings.
+     * @return {@link Settings}.
      */
     Settings getSettings();
 }

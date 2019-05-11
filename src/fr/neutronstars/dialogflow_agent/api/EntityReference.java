@@ -8,7 +8,7 @@ public interface EntityReference{
 
   Entity getEntity();
 
-  String getReferenceValue();
+  String getName();
 
   Collection<String> getSynonyms();
 
