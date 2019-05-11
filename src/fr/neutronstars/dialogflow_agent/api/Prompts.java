@@ -1,4 +1,6 @@
-import fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api;
+
+import java.util.Collection;
 
 public interface Prompts
 {

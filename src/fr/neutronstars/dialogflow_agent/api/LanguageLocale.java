@@ -1,4 +1,4 @@
-import fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api;
 
 public interface LanguageLocale{
 

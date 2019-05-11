@@ -1,4 +1,7 @@
-import fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api;
+
+import java.util.Collection;
+import java.util.Optional;
 
 /**
  * interface Agent.
