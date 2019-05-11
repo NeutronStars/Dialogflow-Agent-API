@@ -106,7 +106,7 @@ public interface Intent
      * <h2>Example</h2>
      * <pre><code>
      *     intent.getParameterByName("MyParameterName").ifPresent(parameter {@link Parameter} -> {
-     *        System.out.println(intent.getValue());
+     *        System.out.println(parameter.getValue());
      *     });
      * </code></pre>
      *
