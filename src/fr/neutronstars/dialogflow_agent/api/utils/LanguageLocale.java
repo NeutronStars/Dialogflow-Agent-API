@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.utils;
 
-public interface Response
-{
+import fr.neutronstars.dialogflow_agent.api.Agent;
+import fr.neutronstars.dialogflow_agent.api.utils.Language;
+import fr.neutronstars.dialogflow_agent.api.utils.Settings;
+
+public interface LanguageLocale{
+
   Agent getAgent();
 
-  Intent getIntent();
+  Settings getSettings();
 
-  String getResponse();
+  Language getLanguage();
 
-  Platform getPlatform();
+  String getName();
+
 }

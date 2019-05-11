@@ -1,4 +1,6 @@
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.entities;
+
+import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.Collection;
 

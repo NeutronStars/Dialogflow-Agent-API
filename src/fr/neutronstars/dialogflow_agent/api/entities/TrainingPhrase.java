@@ -13,41 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.entities;
+
+import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.Collection;
 import java.util.Optional;
 
-public interface Intent{
-
+public interface TrainingPhrase
+{
   Agent getAgent();
 
-  String getName();
+  Intent getIntent();
 
-  Collection<? extends Context> getContextsIn();
-
-  Collection<? extends Context> getContextsOut();
-
-  Optional<? extends Context> getContextByName(String name);
-
-  Event[] getEvents();
-
-  boolean hasEvent(Event event);
-
-  Collection<? extends TrainingPhrase> getTrainingPhrases();
+  String getPhrase();
 
   Collection<? extends Parameter> getParameters();
 
-  Optional<? extends Parameter> getParameterByName(String name);
-
-  Collection<? extends Response> getResponses();
-
-  Collection<? extends Response> getResponsesByPlatform(Platform platform);
-
-  boolean isEndConversation();
-
-  boolean isEnableWebhookIntent();
-
-  boolean isEnableWebhookSlotFilling();
-
+  Optional<? extends Parameter> getParametersByName(String name);
 }

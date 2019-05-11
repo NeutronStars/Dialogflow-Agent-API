@@ -13,27 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.utils;
 
-import java.util.Optional;
-
-public interface Parameter
-{
-  Agent getAgent();
-
-  Intent getIntent();
-
-  String getName();
-
-  Optional<? extends Entity> getEntity();
-
-  String getValue();
-
-  boolean isRequired();
-
-  boolean isList();
-
-  Optional<String> defaultValue();
-
-  Optional<? extends Prompts> getPrompts();
+public enum Platform{
+  DEFAULT,
+  GOOGLE_ASSISTANT,
+  FACEBOOK_MESSENGER,
+  TELEPHONY,
+  SLACK,
+  TELEGRAM,
+  KIK,
+  VIBER,
+  SKYPE,
+  LINE;
 }

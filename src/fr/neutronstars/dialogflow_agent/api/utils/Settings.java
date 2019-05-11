@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.utils;
 
-import java.util.Optional;
+import fr.neutronstars.dialogflow_agent.api.Agent;
 
-public interface Language{
+import java.util.TimeZone;
+
+public interface Settings{
 
   Agent getAgent();
 
-  Settings getSettings();
+  String getDescription();
 
-  String getName();
+  TimeZone getDefaultTimeZone();
 
-  Optional<? extends LanguageLocale> getLanguageLocale();
+  Language[] getLanguages();
 
-  boolean isDefault();
+  boolean hasLanguage(Language Language);
+
 }

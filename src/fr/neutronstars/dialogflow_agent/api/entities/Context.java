@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.entities;
+
+import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.Collection;
 import java.util.Optional;

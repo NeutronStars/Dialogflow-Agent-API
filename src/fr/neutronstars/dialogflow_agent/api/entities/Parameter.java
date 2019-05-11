@@ -13,19 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.entities;
 
-import java.util.Collection;
+import fr.neutronstars.dialogflow_agent.api.Agent;
 
-public interface Prompts
+import java.util.Optional;
+
+public interface Parameter
 {
   Agent getAgent();
 
   Intent getIntent();
 
-  Parameter getParameter();
+  String getName();
 
-  Collection<String> getPrompts();
+  Optional<? extends Entity> getEntity();
 
-  int getSize();
+  String getValue();
+
+  boolean isRequired();
+
+  boolean isList();
+
+  Optional<String> defaultValue();
+
+  Optional<? extends Prompts> getPrompts();
 }

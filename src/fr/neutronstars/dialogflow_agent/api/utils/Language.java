@@ -13,16 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.neutronstars.dialogflow_agent.api;
+package fr.neutronstars.dialogflow_agent.api.utils;
 
-public interface LanguageLocale{
+import fr.neutronstars.dialogflow_agent.api.Agent;
+
+import java.util.Optional;
+
+public interface Language{
 
   Agent getAgent();
 
   Settings getSettings();
 
-  Language getLanguage();
-
   String getName();
 
+  Optional<? extends LanguageLocale> getLanguageLocale();
+
+  boolean isDefault();
 }

@@ -16,6 +16,10 @@
 
 package fr.neutronstars.dialogflow_agent.api;
 
+import fr.neutronstars.dialogflow_agent.api.entities.Entity;
+import fr.neutronstars.dialogflow_agent.api.entities.Intent;
+import fr.neutronstars.dialogflow_agent.api.utils.Settings;
+
 import java.util.Collection;
 import java.util.Optional;
 
