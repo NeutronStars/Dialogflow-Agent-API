@@ -53,6 +53,7 @@ public interface Context
 
     /**
      * Retrieve the {@link Intent} with the name where this context is.
+     * <br>If the {@link Intent} <b>does not exist</b> then the optional <b>will be empty</b>.
      *
      * <h2>Example</h2>
      * <pre><code>

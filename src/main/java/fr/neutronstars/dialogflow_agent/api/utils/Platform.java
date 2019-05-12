@@ -15,15 +15,19 @@
  */
 package fr.neutronstars.dialogflow_agent.api.utils;
 
-public enum Platform{
-  DEFAULT,
-  GOOGLE_ASSISTANT,
-  FACEBOOK_MESSENGER,
-  TELEPHONY,
-  SLACK,
-  TELEGRAM,
-  KIK,
-  VIBER,
-  SKYPE,
-  LINE;
+/**
+ * List of Platforms used by Dialogflow.
+ */
+public enum Platform
+{
+    DEFAULT,
+    GOOGLE_ASSISTANT,
+    FACEBOOK_MESSENGER,
+    TELEPHONY,
+    SLACK,
+    TELEGRAM,
+    KIK,
+    VIBER,
+    SKYPE,
+    LINE;
 }

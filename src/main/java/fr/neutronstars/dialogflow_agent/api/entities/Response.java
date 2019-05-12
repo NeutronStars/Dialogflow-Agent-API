@@ -18,13 +18,34 @@ package fr.neutronstars.dialogflow_agent.api.entities;
 import fr.neutronstars.dialogflow_agent.api.Agent;
 import fr.neutronstars.dialogflow_agent.api.utils.Platform;
 
+/**
+ * <p>Every intent must define a response that's returned to the user.
+ * There are two primary ways you can return a response to the user — either with a pre-defined, static response or with a response generated from a webhook.
+ * In both of these cases, you can use extracted parameters in the response. {@link 'https://dialogflow.com/docs/intents/responses'}</p>
+ */
 public interface Response
 {
-  Agent getAgent();
+    /**
+     * Retrieves the instance of {@link Agent}.
+     * @return {@link Agent}
+     */
+    Agent getAgent();
 
-  Intent getIntent();
+    /**
+     * Retrieves the instance of {@link Intent} of this Response.
+     * @return {@link Intent}
+     */
+    Intent getIntent();
 
-  String getResponse();
+    /**
+     * Retrieves the response send to users.
+     * @return the response.
+     */
+    String getResponse();
 
-  Platform getPlatform();
+    /**
+     * Retrieves the {@link Platform} where the response will be used.
+     * @return {@link Platform} of this response.
+     */
+    Platform getPlatform();
 }

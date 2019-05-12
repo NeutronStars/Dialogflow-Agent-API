@@ -19,15 +19,38 @@ import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.Collection;
 
+/**
+ * Prompt appears when the parameter is required.
+ */
 public interface Prompts
 {
-  Agent getAgent();
+    /**
+     * Retrieves the instance of {@link Agent}.
+     * @return {@link Agent}
+     */
+    Agent getAgent();
 
-  Intent getIntent();
+    /**
+     * Retrieves the instance of {@link Intent} of this Prompts.
+     * @return {@link Intent}
+     */
+    Intent getIntent();
 
-  Parameter getParameter();
+    /**
+     * Retrieves the instance of {@link Parameter} of this Prompts.
+     * @return {@link Parameter}
+     */
+    Parameter getParameter();
 
-  Collection<String> getPrompts();
+    /**
+     * Retrieves the list of prompts.
+     * @return {@link Collection} of prompts.
+     */
+    Collection<String> getPrompts();
 
-  int getSize();
+    /**
+     * Retrieves the prompts count.
+     * @return prompts count.
+     */
+    int getSize();
 }

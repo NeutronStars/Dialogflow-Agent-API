@@ -19,16 +19,32 @@ import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.TimeZone;
 
-public interface Settings{
+/**
+ * <p>Access the agent's settings. {@link 'https://dialogflow.com/docs/agents/create-manage'} </p>
+ */
+public interface Settings
+{
+    /**
+     * Retrieves the instance of {@link Agent}.
+     * @return {@link Agent}
+     */
+    Agent getAgent();
 
-  Agent getAgent();
+    /**
+     * Retrieves the description of {@link Agent}
+     * @return the description of {@link Agent}
+     */
+    String getDescription();
 
-  String getDescription();
+    /**
+     * Retrieves the {@link TimeZone} of {@link Agent}
+     * @return the {@link TimeZone}.
+     */
+    TimeZone getDefaultTimeZone();
 
-  TimeZone getDefaultTimeZone();
-
-  Language[] getLanguages();
-
-  boolean hasLanguage(Language Language);
-
+    /**
+     * Retrieves the array of {@link Language} used by the {@link Agent}
+     * @return array of {@link Language}
+     */
+    Language[] getLanguages();
 }

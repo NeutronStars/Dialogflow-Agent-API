@@ -19,23 +19,93 @@ import fr.neutronstars.dialogflow_agent.api.Agent;
 
 import java.util.Optional;
 
+/**
+ * <p>Within each intent, there is a table under the training phrases section entitled Action and parameters.
+ * Once you annotate your training phrases, the corresponding parameters automatically appear in this table.
+ * This section also contains a text field named "action".
+ * The value of this field is passed to fulfillment and can be used to trigger specific logic. {@link 'https://dialogflow.com/docs/intents/actions-parameters'}</p>
+ */
 public interface Parameter
 {
-  Agent getAgent();
+    /**
+     * Retrieves the instance of {@link Agent}.
+     * @return {@link Agent}
+     */
+    Agent getAgent();
 
-  Intent getIntent();
+    /**
+     * Retrieves the {@link Intent} of this Parameter.
+     * @return {@link Intent}
+     */
+    Intent getIntent();
 
-  String getName();
+    /**
+     * Retrieves the name of this Parameter.
+     * @return the name of parameter
+     */
+    String getName();
 
-  Optional<? extends Entity> getEntity();
+    /**
+     * Retrieves the {@link Entity} used for this Parameter.
+     * <br>If the {@link Entity} <b>does not exist</b> then the optional <b>will be empty</b>.
+     *
+     *  <h2>Example</h2>
+     * <pre><code>
+     *     parameter.getEntity().ifPresent(entity {@link Entity} -> {
+     *        System.out.println(entity.getName());
+     *     });
+     * </code></pre>
+     *
+     * @return {@link Optional} of {@link Entity}
+     */
+    Optional<? extends Entity> getEntity();
 
-  String getValue();
+    /**
+     * The value of a parameter can be used in responses to refer to that parameter.
+     * The value is like a placeholder or the variable assigned to the parameter.
+     *
+     * @return the value / variable.
+     */
+    String getValue();
 
-  boolean isRequired();
+    /**
+     * Retrieves if this Parameter is required.
+     *
+     * If this parameter <b>is required</b>, it will be possible to insert <b>prompts</b>. {@link #getPrompts()}
+     *
+     * @return if parameter is required.
+     */
+    boolean isRequired();
 
-  boolean isList();
+    /**
+     * the IS LIST option in the parameter table defines this entity as a list.
+     * This makes it possible to enter an unlimited number of possible parameters in a user utterance in a single entity.
+     *
+     * @return isList.
+     */
+    boolean isList();
 
-  Optional<String> defaultValue();
+    /**
+     * Retrieve the default value if the user does not specify information to this parameter.
+     *
+     *  <h2>Example</h2>
+     * <pre><code>
+     *     parameter.defaultValue().ifPresent(System.out::println);
+     * </code></pre>
+     *
+     * @return {@link Optional} of the default value.
+     */
+    Optional<String> defaultValue();
 
-  Optional<? extends Prompts> getPrompts();
+    /**
+     * Retrieves the {@link Prompts} if this Parameter is required. {@link #isRequired()}
+     *
+     *  <h2>Example</h2>
+     * <pre><code>
+     *     parameter.getPrompts().ifPresent(prompts -> prompts.getPrompts().forEach(System.out::println));
+     * </code></pre>
+     *
+     * @return {@link Optional} of {@link Prompts}
+     */
+    Optional<? extends Prompts> getPrompts();
 }

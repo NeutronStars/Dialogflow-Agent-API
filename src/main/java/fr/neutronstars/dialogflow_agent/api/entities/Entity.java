@@ -46,6 +46,7 @@ public interface Entity
 
     /**
      * Retrieve the {@link EntityReference} with the name.
+     * <br>If the {@link EntityReference} <b>does not exist</b> then the optional <b>will be empty</b>.
      *
      * <h2>Example</h2>
      * <pre><code>
@@ -57,8 +58,8 @@ public interface Entity
      * </code></pre>
      *
      * @param name of {@link EntityReference}
-     *        The name of {@link Intent}
-     * @return {@link Optional} of {@link Intent}
+     *        The name of {@link EntityReference}
+     * @return {@link Optional} of {@link EntityReference}
      */
     Optional<? extends EntityReference> getReferenceByName(String name);
 }
